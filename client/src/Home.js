@@ -4,7 +4,6 @@ import './Home.css'
 
 function Home()
 {
-
     const [buns] = useState(2);
     const [salad,setSalad] = useState("0");
     const [cheeseSlices,setCheeseSlices] = useState(0);
