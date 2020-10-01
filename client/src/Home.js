@@ -26,10 +26,10 @@ function Home()
         if(prices)
         {
             let total = prices.bun*buns+prices.cheeseSlice*cheeseSlices+prices.cutlet*cutlets;
-            total = salad=="1"?total+prices.salad:total;
+            total = salad==="1"?total+prices.salad:total;
             setTotalPrice(total);
         }
-    },[salad,cheeseSlices,cutlets,prices])
+    },[buns,salad,cheeseSlices,cutlets,prices])
 
 
     function handlePlaceOrder(e)

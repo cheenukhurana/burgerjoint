@@ -41,7 +41,7 @@ function Orders()
             setUniqueOrders([...new Map(allOrders.map(order => [order.Person, order])).values()]);
         
             let displayOrders = [];
-            if(filterPersonOption=="All")
+            if(filterPersonOption==="All")
             {
                 displayOrders = allOrders;
             }
