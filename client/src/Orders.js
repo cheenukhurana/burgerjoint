@@ -14,12 +14,14 @@ function OrdersTable(props)
 
 function Orders()
 {
-    const [allOrders,setAllOrders] = useState(null);
-    const [uniqueOrders,setUniqueOrders] = useState(null);
-    const [ordersToDisplay, setOrdersToDisplay] = useState(null);
-    const [lastTableRow,setLastTableRow] = useState(null);
-    const [filterPersonOption,setFilterPersonOption] = useState("All");
+    const [allOrders,setAllOrders] = useState(null);                    // To store all orders fetched from the server
+    const [uniqueOrders,setUniqueOrders] = useState(null);              // To store unique orders using person name
+    const [ordersToDisplay, setOrdersToDisplay] = useState(null);       // The order to display depending upon filter option
+    const [lastTableRow,setLastTableRow] = useState(null);              // Last table row which will compute the total
+    const [filterPersonOption,setFilterPersonOption] = useState("All"); // Set filter option according to person name
 
+
+    // Set all order on inital load
     useEffect(()=>{
 
         fetch("http://localhost:9000/allOrders")
@@ -33,9 +35,9 @@ function Orders()
             }
         });
     },[])
-
+ 
+    // Change ordersToDisplay when filter option changes
     useEffect(()=>{
-
         if(allOrders)
         {
             setUniqueOrders([...new Map(allOrders.map(order => [order.Person, order])).values()]);
@@ -59,6 +61,7 @@ function Orders()
         }
     },[allOrders,filterPersonOption])
 
+    // Change Last Row when ordersToDisplay changes
     useEffect(()=>{
         if(ordersToDisplay)
         {

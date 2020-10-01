@@ -9,10 +9,11 @@ function Home()
     const [salad,setSalad] = useState("0");
     const [cheeseSlices,setCheeseSlices] = useState(0);
     const [cutlets,setCutlets] = useState(0);
-    const [prices,setPrices] = useState(null);
-    const [totalPrice,setTotalPrice] = useState(0);
-    const [orderPlaced,setOrderPlaced] = useState(false);
+    const [prices,setPrices] = useState(null);             // This will be set when we fetch the price list from server
+    const [totalPrice,setTotalPrice] = useState(0);        // Total Cart Value
+    const [orderPlaced,setOrderPlaced] = useState(false);  // Set true when order is placed
 
+    // Fetch the price list on inital load
     useEffect(()=>{
         fetch('http://localhost:9000/prices')
         .then(res=>res.json())
@@ -21,6 +22,7 @@ function Home()
         })
     },[]);
 
+    // Change the total price whenever any item quantity changes
     useEffect(()=>{
         if(prices)
         {

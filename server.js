@@ -12,6 +12,7 @@ const server = http.createServer(app);
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(cors());
 
+// For placing order to the server
 app.post('/order',function(req,res){
     let orders = [];
     fs.readFile(process.cwd()+'/orders.json',function(error,data){
@@ -36,6 +37,7 @@ app.post('/order',function(req,res){
     });
 });
 
+// Fetching all orders
 app.get('/allOrders',function(req,res){
     let orders = [];
     fs.readFile(process.cwd()+'/orders.json',function(error,data){
@@ -52,6 +54,7 @@ app.get('/allOrders',function(req,res){
     })
 })
 
+// Fetching price list
 app.get('/prices',function(req,res){
     res.json(prices).end();
 });
