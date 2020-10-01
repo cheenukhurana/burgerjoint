@@ -25,7 +25,6 @@ app.post('/order',function(req,res){
             orders = JSON.parse(data);
         }
         let orderData = req.body;
-        // orderData.id = (new Date()).getTime().toString();
         orders.push(orderData);
         fs.writeFile('orders.json',JSON.stringify(orders,null,'\t'),function(error){
             if(error)
@@ -36,28 +35,6 @@ app.post('/order',function(req,res){
         });
     });
 });
-
-// app.get('/totalOrderValue',function(req,res){
-//     let orders = [];
-//     fs.readFile(process.cwd()+'/orders.json',function(error,data){
-//         if(error)
-//         {
-//             console.log(error);
-//             throw error;
-//         }
-//         if(data.toString())
-//         {
-//             orders = JSON.parse(data);
-//         }
-//         let total = 0;
-//         for(let i=0;i<orders.length;i++)
-//         {
-//             total = total+Number(orders[i].total);
-//         }
-//         let stringTotal = ""+total;
-//         res.end(stringTotal);
-//     });
-// });
 
 app.get('/allOrders',function(req,res){
     let orders = [];

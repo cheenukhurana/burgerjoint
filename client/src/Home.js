@@ -18,7 +18,6 @@ function Home()
         .then(res=>res.json())
         .then(data=>{
             setPrices(data)
-            console.log(data);
         })
     },[]);
 
@@ -39,7 +38,6 @@ function Home()
         let formElement = document.getElementById("burger-menu-form");
         let formData = new FormData(formElement);
         formData.append("total",totalPrice);
-        console.log(formData);
 
         fetch(formElement.action,{
             method: "POST",
