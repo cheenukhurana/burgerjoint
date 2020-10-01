@@ -1,17 +1,14 @@
 # burgerjoint
 Place order for a burger and show all orders
 
-Run client and server processes on terminal.
+How to run:
 
-Run Server:
 - cd to the root directory
 - npm install
-- node server.js
+- npm run dev
+- visit localhost:3000
 
-Run Client:
-- cd to the client directory in root folder
-- npm install
-- npm start
+The client and server will run concurrently.
 
 
-Visit localhost:3000
+
