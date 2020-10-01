@@ -6,7 +6,7 @@ function OrdersTable(props)
     return (
         <>
             <tr>
-                {Object.keys(props.order).map((key)=><td>{props.order[key]}</td>)}
+                {Object.keys(props.order).map((property,index)=><td key={index}>{props.order[property]}</td>)}
             </tr> 
         </>
     )
@@ -93,22 +93,22 @@ function Orders()
                             <label className="label" htmlFor="persons">Filter by Person</label>
                             <select id="select-person" name='persons' onChange={filterHandler}>
                                 <option value="All">All</option>
-                                {uniqueOrders.map(order=><option value={order.Person}>{order.Person}</option>)}
+                                {uniqueOrders.map(order=><option value={order.Person} key={order.Person}>{order.Person}</option>)}
                             </select>
                         </div>
                         <table>
                             <thead>
                                 <tr>
-                                    {Object.keys(ordersToDisplay[0]).map(key=><th>{key}</th>)}
+                                    {Object.keys(ordersToDisplay[0]).map((property,index)=><th key={index}>{property}</th>)}
                                 </tr>
                             </thead>
                             <tbody>
-                                {ordersToDisplay.map((order)=><OrdersTable order={order} filterPersonOption={filterPersonOption}/>)}
+                                {ordersToDisplay.map((order,index)=><OrdersTable key={index} order={order} filterPersonOption={filterPersonOption}/>)}
                             </tbody>
                             {lastTableRow && (
                                 <tfoot>
                                     <tr>
-                                        {lastTableRow.map(val=><td>{val}</td>)}
+                                        {lastTableRow.map((val,index)=><td key={index}>{val}</td>)}
                                     </tr>
                                 </tfoot>
                             )}
