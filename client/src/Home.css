@@ -1,0 +1,46 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.order-page
+{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 30%;;
+    transform: translate(-50%, 0);
+    
+}
+
+#burger-menu-form
+{
+    font-size: large; 
+}
+
+#totalPrice
+{
+    font-weight: bold;
+}
+
+.form-input-label
+{
+    display: inline-block;
+    width: 160px;;
+}
+
+.form-input
+{
+    width: 80px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.form-input-name
+{
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,47 @@
+.orders-table
+{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.filter-by
+{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+#select-person
+{
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) 
+{
+    background-color: #f9f9f9;
+}
+
+td,th
+{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+tfoot
+{
+    font-weight: bold;
+}
